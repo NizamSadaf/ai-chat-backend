@@ -9,7 +9,8 @@ async function bootstrap() {
 
   app.useWebSocketAdapter(new IoAdapter(app)); // Ensure WebSocket adapter is used
 
-  await app.listen(3001);
+  const port = process.env.PORT || 3001;
+  await app.listen(port);
   console.log("🚀 Server running on http://localhost:3001");
 }
 
